@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ajout-pays</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="addpays()" >
+  
+    <div class="segment">
+      <h1>Ajouter un Pays</h1>
+    </div>
+    
+    <label>
+      <input type="text"[(ngModel)]="nom" name="nom" placeholder=" Nom du pays"/>
+    </label>
+    <label>
+      <input type="text"  [(ngModel)]="capitale"  name="capitale" placeholder="Capitale"/>
+    </label>
+    <label>
+      <input type="text"  [(ngModel)]="superficie"  name="capitale"   placeholder="Superficie"/>
+    </label>
+
+    <label>
+      <input type="file" placeholder="Logo.jpg" id="logo" [(ngModel)]="drapeau"  name="drapeau"
+      class="form-control"
+    (change)="selectFile($event)" accept="image/png, image/jpeg, image/jpg" required />
+    </label>
+    <!-- <button class="red" type="button"> <i class="icon ion-md-lock"></i>Enregistrer</button> -->
+    <button class="button login__submit" >
+      <span class="button__text" style="align-items: center;" > Enregistrer </span>
+      <i class="button__icon fas fa-chevron-right"></i>
+    </button>	
+  </form>
+ 
+</ion-content>

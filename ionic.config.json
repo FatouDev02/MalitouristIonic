@@ -1,0 +1,7 @@
+{
+  "name": "Malitourist",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

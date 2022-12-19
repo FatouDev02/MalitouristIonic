@@ -1,0 +1,42 @@
+<!-- <ion-app>
+  <ion-split-pane contentId="main-content" when="lg" >
+
+  <ion-menu side="start" contentId="main-content" swipeGesture="false">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item>
+          Accueil
+        </ion-item>
+        <ion-item>
+          Pays
+        </ion-item>
+        <ion-item>
+          Activités
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content" ></ion-router-outlet>
+  </ion-split-pane>
+
+</ion-app> -->
+
+<ion-router-outlet id="main"> </ion-router-outlet>
+
+<ion-app>
+  <ion-split-pane contentId="main" when="m">
+    <!--  the side menu  -->
+
+    
+    <!-- the main content -->
+   <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
+
+  
+</ion-app>

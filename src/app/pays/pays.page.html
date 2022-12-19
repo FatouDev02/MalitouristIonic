@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pays</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="row">
+    <div class="col-lg-6 col-12">
+      <div class="d-grid gap-2 m-2 d-md-flex justify-content-md-start">
+  
+      </div>
+  
+    </div>
+    <div class="col-lg-6 col-12">
+      <div class="d-grid m-2 gap-2 d-md-flex justify-content-md-end">
+        <button class="btn buttonColor" type="button" routerLink="/ajout-pays" >+ Ajouter un  Pays</button>
+      </div>
+      
+    </div>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6"  *ngFor= "let p of  allpays">
+      <div class="blog-card">
+        <div class="meta">
+          <div class="photo" style="background-image: url(https://koulouba.ml/wp-content/uploads/2021/02/MALI_Koulouba.jpg)">
+            
+            <img src={{p.drapeau}} alt="">
+          </div>
+          <ul class="details">
+            <li class="author"><a routerLink="/accueil">Mali</a></li>
+            <!-- <li class="date"></li>
+            <li class="tags">
+              <ul>
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Code</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+              </ul>
+            </li> -->
+          </ul>
+        </div>
+        <div class="description">
+          <h1>{{p.nom}}</h1>
+          
+          <p>Superficie:{{p.superficie}}</p>
+          <p>dfghjjhgfdb hgfcnbgfvdcfghnbvcvghjnbv</p>
+
+          <p>Capitale:{{p.capitale}}</p>
+
+          <p class="read-more">
+            <a href="#">Voir +</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="blog-card alt">
+        <div class="meta">
+          <div class="photo" 
+          style="background-image: url(https://www.afdb.org/sites/default/files/styles/1700x900/public/promoville-senegal-1500_0.jpg?itok=ru4bhePw)"></div>
+          <ul class="details">
+            <li class="author"><a href="#">Sénégal</a></li>
+            <!-- <li class="date">July. 15, 2015</li>
+            <li class="tags">
+              <ul>
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Code</a></li>
+                <li><a href="#">JavaScript</a></li>
+              </ul>
+            </li> -->
+          </ul>
+        </div>
+        <div class="description">
+          <h1>Sénégal</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+          <p class="read-more">
+            <a href="#">Voir +
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</ion-content>
