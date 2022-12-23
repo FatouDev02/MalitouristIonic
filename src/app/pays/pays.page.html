@@ -5,10 +5,165 @@
 </ion-header>
 
 <ion-content>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-form">
+    +Activite 
+  </button>
+  
+  <!-- Modal
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!-- Modal Content -->
+<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-body p-0">
+              <div class="card  shadow-soft border-light p-4">
+                 
+                  <button type="button" class="btn-close" aria-label="Close"  data-dismiss="modal-form"></button>
+
+                  <div class="card-header text-center pb-0">
+                      <h2 class="h4">MaliTourist</h2>
+                      <span>Ajouter une Activité</span>   
+                  </div>
+                  <div class="card-body">
+                      <form (ngSubmit)="addactivity()" class="mt-4">
+                         <!-- Form -->
+                         <div class="form-group">
+                          <label for="exampleInputPassword6">Titre de l'activité</label>
+                          <div class="input-group mb-4">
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
+                              </div>
+                              <input class="form-control" [(ngModel)]="titre" name="titre" placeholder="Titre de l'activité" type="text"  required>
+                          </div>
+                      </div>
+                      <!-- End of Form -->
+                         
+                          <!-- Form -->
+                          <div class="form-group">
+                            <label for="exampleInputIcon3">Image</label>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><span class="fas fa-envelope"></span></span>
+                                </div>
+                                <input class="form-control" [(ngModel)]="img" name="img" class="form-control"
+                                (change)="selectFile($event)" accept="image/png, image/jpeg, image/jpg" required placeholder="image" type="file" >
+                            </div>
+                        </div>
+                        <!-- End of Form -->
+                          <div class="form-group">
+                              <!-- Form -->
+                          <div class="form-group">
+                            <label for="exampleInputIcon3">Description</label>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><span class="fas fa-envelope"></span></span>
+                                </div>
+                                <input class="form-control" [(ngModel)]="description" name="description" placeholder="Donnez une description a l'activité" type="text" >
+                            </div>
+                        </div>
+                        <!-- End of Form -->
+                             
+                          </div>
+                          <button type="submit" class="btn btn-block btn-primary">Enregistrer</button>
+                      </form>
+
+                      <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                          <span class="font-weight-normal">
+                              Not registered?
+                              <a routerLink="/allactivity" class="font-weight-bold">Afficher tout les activités</a>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- End of Modal Content -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="row">
     <div class="col-lg-6 col-12">
       <div class="d-grid gap-2 m-2 d-md-flex justify-content-md-start">
-  
+        <button class="btn buttonColor" type="button" routerLink="/creer-region" >+ Ajouter </button>
       </div>
   
     </div>
@@ -50,7 +205,7 @@
           <p>Capitale:{{p.capitale}}</p>
 
           <p class="read-more">
-            <a href="#">Voir +</a>
+            <a  [routerLink]="['/detailpays',p.id]">Voir +</a>
           </p>
         </div>
       </div>

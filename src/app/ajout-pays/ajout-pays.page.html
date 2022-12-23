@@ -12,15 +12,17 @@
     </div>
     
     <label>
-      <input type="text"[(ngModel)]="nom" name="nom" placeholder=" Nom du pays"/>
+      <input type="text"[(ngModel)]="nompays" name="nompays" placeholder=" Nom du pays"/>
     </label>
     <label>
       <input type="text"  [(ngModel)]="capitale"  name="capitale" placeholder="Capitale"/>
     </label>
     <label>
-      <input type="text"  [(ngModel)]="superficie"  name="capitale"   placeholder="Superficie"/>
+      <input type="text"  [(ngModel)]="superficie"  name="superficie"   placeholder="Superficie"/>
     </label>
-
+    <label>
+      <input type="text"  [(ngModel)]="description"  name="description"   placeholder="description"/>
+    </label>
     <label>
       <input type="file" placeholder="Logo.jpg" id="logo" [(ngModel)]="drapeau"  name="drapeau"
       class="form-control"

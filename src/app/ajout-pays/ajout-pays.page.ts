@@ -17,14 +17,15 @@ export class AjoutPaysPage implements OnInit {
   erreur!: boolean;
   fichier: any;
   myform!:FormGroup
-  nom:any
+  nompays:any
   superficie:any
+  description:any
   capitale:any
   drapeau:any
   file:any
   pays!:Pays
-  //modal for
   name!: string;
+  a:any
 
   constructor(private router:Router,private paysservice:PaysService,private http:HttpClient,private modalCtrl: ModalController,private fb:FormBuilder ) { }
 
@@ -38,11 +39,11 @@ export class AjoutPaysPage implements OnInit {
   }
   addpays(){ 
     var pays=[{
-      'nom':this.nom,
+      'nompays':this.nompays,
       'superficie':this.superficie,
-      'description':'',
+      'description':this.description,
+      'capitale':this.capitale,
       'drapeau':'',
-      'capitale':this.capitale
     }]
     const data=new FormData()
     data.append('file',this.fichier)
@@ -50,22 +51,14 @@ export class AjoutPaysPage implements OnInit {
     data.append('pays',JSON.stringify(pays).slice(1,JSON.stringify(pays).lastIndexOf(']')))
     this.http.post('http://localhost:8080/ApiTourist/pays/add',data).subscribe(
       (data)=>{
-       // this.myform.reset()
-        console.log(data)
+       //this.myform.reset()
+       this.a=data
+        console.log(this.a)
        // this.router.navigate(['/pays'])
       }
     );
    }
-  // addpays(){
-  //   this.pays= this.myform.value
-  //   this.paysservice.addPays(this.pays).subscribe(
-  //     data=>{
-  //       this.myform.reset()
-  //       console.log(data)
-
-  //     }
-  //   )
-  // }
+  
   selectFile(e:any){
     //verification si une photo a été choisie ou pas
     if(!e.target.files[0] || e.target.files[0].length==0){
@@ -86,6 +79,15 @@ export class AjoutPaysPage implements OnInit {
       }
     }
   }
+// addpays(){
+  //   this.pays= this.myform.value
+  //   this.paysservice.addPays(this.pays).subscribe(
+  //     data=>{
+  //       this.myform.reset()
+  //       console.log(data)
 
+  //     }
+  //   )
+  // }
 
 }

@@ -13,21 +13,55 @@
       <div class="col-12 col-md-8">
         <div class="screen">
           <div class="screen__content">
-            <form class="login" (ngSubmit)="login()" [formGroup]="credentials">
+            <form class="login" *ngIf="!isLoggedIn"
+            name="form"
+            (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm"
+            novalidate>
               <div class="login__field">
                 <i class="login__icon fas fa-user"></i>
-                <input type="text" class="login__input" name="username" formControlName="username" placeholder="Nom d'utilisateur">
+                <input type="text" class="login__input" name="username"
+                [(ngModel)]="form.username"
+                required
+                #username="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && username.errors }" placeholder="Nom d'utilisateur">
+                <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
+                  Username is required!
+                </div>
               </div>
+            
               <div class="login__field">
                 <i class="login__icon fas fa-lock"></i>
-                <input type="password" class="login__input" name="password" placeholder="Mot de passe" formControlName="password">
+                <input type="password" class="login__input"  name="password"
+                [(ngModel)]="form.password"
+                required
+                minlength="6"
+                #password="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && password.errors }" placeholder="Mot de passe" >
+                <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+                  <div *ngIf="password.errors['required']">Password is required</div>
+                  <div *ngIf="password.errors['minlength']">
+                    Password must be at least 6 characters
+                  </div>
+                </div>
               </div>
-              <button class="button login__submit" [disabled]="!credentials.valid">
+              
+              <button class="button login__submit" type="submit" >
                 <span class="button__text" style="align-items: center;" > Se Connecter </span>
                 <i class="button__icon fas fa-chevron-right"></i>
                 
               </button>	
+              <div class="form-group">
+                <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+                  Login failed: {{ errorMessage }}
+                </div>
+              </div>
             </form>
+            <div class="alert alert-success" *ngIf="isLoggedIn">
+              Logged in as {{ roles }}.
+            </div>
+
+            
             <div class="social-login">
               <button  class="button login__submit" value="" > <h3>S'inscrire</h3>
               </button>

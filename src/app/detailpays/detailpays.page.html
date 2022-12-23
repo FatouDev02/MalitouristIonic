@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detailpays</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container " id="all" >
+    <div class="container " id="pays">
+      <div class=" row  " id="cc" >
+        <div id="card" class="col-12 col-md-5 shadow-lg p-3 mb-5 bg-white rounded" >
+          <div class="cercle">
+            <h2>{{superficie}}</h2>
+                </div>
+          <p>Superficie</p>
+       </div>
+       
+       <div id="card"class="col-12 col-md-5 shadow-lg p-3 mb-5 bg-white rounded" >
+          <div class="cercle">
+            <h2>{{nombre}}</h2>  
+                </div>
+          <p>Nombre de Région</p>
+       </div>
+       
+      </div>
+    </div>
+  
+    <div class="container" id="firstrow" style="margin: 15px; ">
+      <div class="row  align-items-cente shadow-lg p-3 mb-5 bg-white rounded" id="gauche" >
+        <div class="col-12 col-md-6" >
+             
+                <div>
+                  <!-- <h1 class="pt-3">{{paysfind.nompays}</h1> -->
+                <p>{{description}}</p>
+                  <h5>Capitale: {{capital}}</h5>
+                </div>
+        </div>
+        <div class="col-12 col-md-6 "style="background-color:white;">
+          <img src="{{drapeau}}" alt="" >
+        </div>
+    </div>
+    </div>
+    <div class="container " style="width:70%;">
+      <div class="container " >
+        <div id="card" class="shadow-lg p-3 mb-5 bg-white rounded">
+         <h1 >Différentes Régions du {{nompays}} </h1>
+        </div>   
+        </div>
+     
+    </div>
+    <div class="container" style="margin: 15px;" *ngFor="let r of reg">
+        
+      <div class="row" id="reg">
+        <div class="col-12  col-md-4 ">
+          <ul class="cards">
+            <li class="">
+              <div class="card">
+                <div class="card_image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/H%C3%B4tel_de_Ville_de_Kayes.jpg/280px-H%C3%B4tel_de_Ville_de_Kayes.jpg"></div>
+                <div class="card_content">
+                  <h2 class="card_title"> {{r.nom}} {{r.coderegion}}</h2>
+                  <p class="card_text">{{r.description}}</p>
+                  <p class="card_text">{{r.domaineactivite}}</p>
+
+                  <button class="btn card_btn" [routerLink]="['/detailactivite',]">Voir +</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+       
+        
+    
+      </div>
+    </div>
+   
+  </div>
+  
+  
+</ion-content>

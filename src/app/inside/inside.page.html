@@ -1,9 +1,78 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>inside</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
+	<ion-slides pager="true">
+		<!-- Slide 1 -->
+		<ion-slide style="    background: linear-gradient(to bottom left, #b9d5fd 40%, #709fdc 100%);
+    ">
+			<!-- <ion-text color="light">
+				<img
+					src="../../assets/avatar.png"
+				/>
+				<h1>Hey there!</h1>
+				<p>This is an epic app because...</p>
+				<ion-button (click)="next()" fill="outline" color="light">Next</ion-button>
+			</ion-text> -->
+              <!-- ======= Hero Section ======= -->
+              <div id="hero">
 
+                <div class="container">
+                  <div class="row justify-content-between">
+                    <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+                      <div data-aos="zoom-out">
+                        <h1>Découvre le Mali dans toute sa<span> splendeur</span></h1>
+                        <h2>Un pays avec une diversité culturelle Merveilleuse <br>
+                          Pays de Soundjata Keita, de Samory Touré,de Soumaoro Kanté... </h2>
+                        <!-- <div class="text-center text-lg-start">
+                          <a routerLink="/accueil" class="btn-get-started scrollto">Découvrez!</a>
+                        </div> -->
+                      </div>
+                    </div>
+                    <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+                      <img src="../../assets/images/mltourist.png" class="img-fluid animated" alt="">
+                    </div>
+                  </div>
+                </div>
+                <ion-button (click)="next()" fill="outline" color="light">Découvrez</ion-button>
+
+              </div>
+
+		</ion-slide>
+
+		<!-- Slide 2 -->
+		<ion-slide  style="    background: linear-gradient(to bottom left, #b9d5fd 40%, #709fdc 100%);
+    ">
+
+
+
+      <div class="container" id="mycont">
+       
+        <div class="carousel">
+          <div class="carousel__face"><span>Bamako</span></div>
+          <div class="carousel__face"><span>Région de Kayes</span></div>
+          <div class="carousel__face"><span>Région de Koulikoro</span></div>
+          <div class="carousel__face"><span>Région de Sikasso </span></div>
+          <div class="carousel__face"><span>Région de Segou</span></div>
+          <div class="carousel__face"><span>Région de Mopti</span></div>
+          <div class="carousel__face"><span>Région de Tombouctou</span></div>
+          <div class="carousel__face"><span>Région de Gao</span></div>
+          <div class="carousel__face"><span>Région de Kidal</span></div>
+        </div>
+         <ion-text color="light">
+          <img
+            src="../../assets/images/mltourist.png"
+          />
+          
+          <ion-button (click)="start()" fill="outline" color="light">commencez!</ion-button>
+  
+        </ion-text>
+      </div>
+     
+			
+		</ion-slide>
+	</ion-slides>
 </ion-content>

@@ -15,7 +15,7 @@ export class PaysService {
     }
     
     getall():Observable<any>{
-      return this.http.get(`${this.env.api}/ApiTourist/pays/listpays`);
+      return this.http.get(`${this.env.api}/ApiTourist/pays/mylist`);
     }
 
 }

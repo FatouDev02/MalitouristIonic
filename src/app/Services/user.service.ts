@@ -4,6 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../userr';
 
+
+const API_URL = 'http://localhost:8080/ApiTourist/user/';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,19 +16,59 @@ export class UserService {
   constructor(public http:HttpClient) { 
 
   }
+
+
+  getPublicContent(): Observable<any> {
+    return this.http.get(API_URL + 'all', { responseType: 'text' });
+  }
+
+  getUserBoard(): Observable<any> {
+    return this.http.get(API_URL + 'user', { responseType: 'text' });
+  }
+  
+  getModeratorBoard(): Observable<any> {
+    return this.http.get(API_URL + 'mod', { responseType: 'text' });
+  }
+
+  getAdminBoard(): Observable<any> {
+    return this.http.get(API_URL + 'admin', { responseType: 'text' });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         addUser(user:User):Observable<any>{
           return this.http.post(`${this.env.api}/ApiTourist/user/addusser/`,user);
       }
     
-    login(username:String,password:String):Observable<any>{
+    // login(username:String,password:String):Observable<any>{
 
-      console.log(username)
-      console.log(password)
-      var utilisateur={
-        "username":username,
-        "password":password
-      }
-      return this.http.post(`${this.env.api}/login`,utilisateur);
-    }
+    //   console.log(username)
+    //   console.log(password)
+    //   var utilisateur={
+    //     "username":username,
+    //     "password":password
+    //   }
+    //   return this.http.post(`${this.env.api}/login`,utilisateur);
+    // }
 
 }

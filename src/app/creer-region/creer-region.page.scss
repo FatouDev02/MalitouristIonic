@@ -10,7 +10,7 @@ body, html {
 /* https://codepen.io/swapnet/pen/QWwPVwE 
 https://codepen.io/rickyeckhardt/pen/oNXeoZp*/
 
-body, p, input, select, textarea, button {
+body, p, input, select, textarea, button,ion-select {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.2px;
     font-size: $ruler;
@@ -33,7 +33,7 @@ form {
   text-align: center;
 }
 
-button, input,select {
+button, input,select ,ion-list{
   border: 0;
   outline: 0;
   font-size: $ruler;

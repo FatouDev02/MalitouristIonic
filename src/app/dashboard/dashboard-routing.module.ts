@@ -13,12 +13,17 @@ const routes: Routes = [
         redirectTo: 'accueil',
         pathMatch: 'full'
       },
+      {
+        path: 'profil',
+        loadChildren: () => import('../profil/profil.module').then( m => m.ProfilPageModule)
+      },
+     
         {
           path: 'accueil',
           loadChildren: () => import('../accueil/accueil.module').then( m => m.AccueilPageModule)
         },
         {
-          path: 'detail-region',
+          path: 'detail-region/:id',
           loadChildren: () => import('../detail-region/detail-region.module').then( m => m.DetailRegionPageModule)
         },
         {
@@ -37,6 +42,12 @@ const routes: Routes = [
           path: 'regions',
           loadChildren: () => import('../regions/regions.module').then( m => m.RegionsPageModule)
         },
+
+        {
+          path: 'detailpays/:id',
+          loadChildren: () => import('../detailpays/detailpays.module').then( m => m.DetailpaysPageModule)
+        },
+  
         {
           path: 'pays',
           loadChildren: () => import('../pays/pays.module').then( m => m.PaysPageModule)
@@ -45,6 +56,29 @@ const routes: Routes = [
           path: 'contact',
           loadChildren: () => import('../contact/contact.module').then( m => m.ContactPageModule)
         },
+        {
+          path: 'board-admin',
+          loadChildren: () => import('../board-admin/board-admin.module').then( m => m.BoardAdminPageModule)
+        },
+        {
+          path: 'board-moderator',
+          loadChildren: () => import('../board-moderator/board-moderator.module').then( m => m.BoardModeratorPageModule)
+        },
+        {
+          path: 'board-user',
+          loadChildren: () => import('../board-user/board-user.module').then( m => m.BoardUserPageModule)
+        },
+        {
+          path: 'modallogin',
+          loadChildren: () => import('../modallogin/modallogin.module').then( m => m.ModalloginPageModule)
+        },
+        {
+          path: 'allactivity',
+          loadChildren: () => import('../allactivity/allactivity.module').then( m => m.AllactivityPageModule)
+        },
+       
+       
+       
         
     ]
   }

@@ -14,7 +14,7 @@
           <div class="col align-self-center text-center" routerLink="/dashboard/profil">
             <!-- <imgclass="imageUtilisateur" alt="Silhouette of mountains" src="../../assets/avatar.png" />
             <img *ngIf="Utilisateur.image!=null" class="imageUtilisateur" alt="Silhouette of mountains" src="{{Utilisateur.image}}" /> -->
-            <img alt="Silhouette of mountains" src="../../assets/images/malitouristlogo.png" />
+            <img alt="Silhouette of mountains" src="../../assets/images/mltourist.png" />
 
           </div>
 
@@ -61,29 +61,32 @@
             <img class="ion-icon Desactive" src="../assets/icon/icon/activiter.png" alt="" srcset=""> &nbsp;&nbsp;&nbsp;
             <ion-label class="lienPage">Activités Au Mali</ion-label>
           </ion-item>
-          <ion-item (click)="FermerSideBar()" lines="none" routerLink="/contact" routerLinkActive='active-item'>
+          <ion-item (click)="FermerSideBar()" lines="none" routerLink="/board-admin" routerLinkActive='active-item'>
             <img class="ion-icon Active" src="../assets/icon/icon/activite une fois active.png" alt="" srcset="">
-            <img class="ion-icon Desactive" src="../assets/icon/icon/activiter.png" alt="" srcset=""> &nbsp;&nbsp;&nbsp;
-            <ion-label class="lienPage">Contact</ion-label>
+            <img class="ion-icon Desactive" src="../assets/icon/icon/activiter.png" alt="" srcset=""> 
+            <ion-label class="lienPage">Admin Board</ion-label>
           </ion-item>
-          <!-- <ion-item *ngIf="Utilisateur.role.libellerole=='ADMIN'" (click)="FermerSideBar()" lines="none" routerLink="/dashboard/entite" routerLinkActive='active-item'>
-            <img class="ion-icon Active" src="../assets/icon/icon/entite une fois toucher.png" alt="" srcset="">
-            <img class="ion-icon Desactive" src="../assets/icon/icon/entite.png" alt="" srcset=""> &nbsp;&nbsp;&nbsp;
-            <ion-label class="lienPage">Activités Au Mali</ion-label>
+          <ion-item (click)="FermerSideBar()" lines="none" routerLink="/board-moderator" routerLinkActive='active-item'>
+            <img class="ion-icon Active" src="../assets/icon/icon/activite une fois active.png" alt="" srcset="">
+            <img class="ion-icon Desactive" src="../assets/icon/icon/activiter.png" alt="" srcset=""> 
+            <ion-label class="lienPage">Moderator Board</ion-label>
+          </ion-item> <ion-item (click)="FermerSideBar()" lines="none" routerLink="/board-user" routerLinkActive='active-item'>
+            <img class="ion-icon Active" src="../assets/icon/icon/activite une fois active.png" alt="" srcset="">
+            <img class="ion-icon Desactive" src="../assets/icon/icon/activiter.png" alt="" srcset=""> 
+            <ion-label class="lienPage">User</ion-label>
+          </ion-item> <ion-item (click)="FermerSideBar()" lines="none" routerLink="/inscription" routerLinkActive='active-item'>
+            <img class="ion-icon Active" src="../assets/icon/icon/activite une fois active.png" alt="" srcset="">
+            <img class="ion-icon Desactive" src="../assets/icon/icon/activiter.png" alt="" srcset=""> 
+            <ion-label class="lienPage">inscription</ion-label>
           </ion-item>
-          <ion-item *ngIf="Utilisateur.role.libellerole=='ADMIN'" (click)="FermerSideBar()" lines="none" routerLink="/dashboard/personnels" routerLinkActive='active-item'>
-            <img class="ion-icon Active" src="../assets/icon/icon/personnel une fois active.png" alt="" srcset="">
-            <img class="ion-icon Desactive" src="../assets/icon/icon/personnel.png" alt="" srcset=""> &nbsp;&nbsp;&nbsp;
-            <ion-label class="lienPage">Population des régions</ion-label>
-          </ion-item> -->
-        
+         
           
           
         </div>
 
 
         <div class="d-grid gap-2 mx-auto mt-2">
-          <button class="btn btn- butonDeconnexion m-2 " (click)="deconnecter()" expand="block">Deconnexion</button>
+          <button class="btn btn- butonDeconnexion m-2 " (click)="logout()" expand="block">Deconnexion</button>
         </div>
 
       </ion-content>

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { CreerRegionPageRoutingModule } from './creer-region-routing.module';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 import { CreerRegionPage } from './creer-region.page';
 
@@ -13,6 +14,8 @@ import { CreerRegionPage } from './creer-region.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
+
     CreerRegionPageRoutingModule
   ],
   declarations: [CreerRegionPage]

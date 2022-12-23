@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>allactivity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="containerr">
+  <div class="row" style="margin-top: 2%;margin-left: 2%;">
+    <div class="col-12 col-md-6" style="margin-bottom: 2%;" *ngFor= "let act of  activity">
+
+      <div class="container">
+        <div class="card">
+          <div class="card-image">
+            <img src="../../assets/images/mltourist.png" alt="image from google">
+          </div>
+          <div class="card-title">{{act.titre}}</div>
+          <div class="card-content">{{act.descriiption}}</div>
+          <div class="card-footer">
+            <a>
+              <button class="btn soft"   (click)="succesImport()">Supprimer</button>
+
+            </a>
+           
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+   
+      
+
+
+
+
+  </div>
+</div>
+</ion-content>

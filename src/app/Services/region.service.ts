@@ -10,39 +10,50 @@ export class RegionService {
   env=environment;
 
   constructor(private http:HttpClient) { }
-  getallregion(){
+  getallregion(): Observable<any>{
+    return this.http.get(`${this.env.api}/ApiTourist/region/mylist`)
 
   }
-  ajoutRegionn( password: String,token: String,coderegion:String,nomregion:String,
-    Superficie:String,langue:String,description:String,file:any): Observable<any> {
+  
 
-    const data: FormData = new FormData();
-    const user = [{ "username or token": token, "password": password }]
+getnombre(id:number):Observable<any>{
+  return this.http.get(`${this.env.api}/ApiTourist/pays/getnombreregionby/${id}`)
 
+}
 
-    const region = [{
-      "coderegion": coderegion,
-      'nomregion': nomregion,
-      "Superficie": Superficie,
-      "langue": langue,
-      "description": description,
-    }]
+getpaysbyid(id:number):Observable<any>{
+  return this.http.get(`${this.env.api}/ApiTourist/pays/get/${id}`)
 
-    data.append('user', JSON.stringify(user).slice(1, JSON.stringify(user).lastIndexOf(']')));
-    data.append('region', JSON.stringify(region).slice(1, JSON.stringify(region).lastIndexOf(']')));
-    data.append('file',file)
+}
+  getregionparpays(id:number): Observable<any>{
+    return this.http.get(`${this.env.api}/ApiTourist/region/listregionbypays/${id}`)
 
-    return this.http.post(`${this.env.api}/ApiTourist/region/add/`, data);
   }
-  ajoutRegion(login:string,password:string,file:any,activite:any):Observable<any>{
+  getregionbyid(id:number): Observable<any>{
+    return this.http.get(`${this.env.api}/ApiTourist/get/${id}`)
+
+  }
+ 
+  add(nompays:string,population:any,region:any,file:any):Observable<any>{
+
+
     const data:FormData=new FormData();
 
-    const user=[{"login":login,"password":password}]
     data.append('file',file);
+    data.append('population', JSON.stringify(population).slice(1,JSON.stringify(population).lastIndexOf(']')));
+    data.append('region', JSON.stringify(region).slice(1,JSON.stringify(region).lastIndexOf(']')));
+    return this.http.post(`${this.env.api}/ApiTourist/region/add/${nompays}`,data);
+
+  }
+
+
+  ajoutRegionnnn(file:any,region:any):Observable<any>{
+    const data:FormData=new FormData();
+
+   
     //data.append('data',activite);
-    console.log(activite)
-    data.append('user', JSON.stringify(user).slice(1,JSON.stringify(user).lastIndexOf(']')));
-    data.append('data', JSON.stringify(activite).slice(1,JSON.stringify(activite).lastIndexOf(']')));
-    return this.http.post(`${this.env.api}/utilisateur/activite/new`,data);
+    console.log(region)
+    data.append('region', JSON.stringify(region).slice(1,JSON.stringify(region).lastIndexOf(']')));
+    return this.http.post(`${this.env.api}/ApiTourist/region/add/`,data);
   }
 }

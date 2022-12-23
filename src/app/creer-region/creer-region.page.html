@@ -7,60 +7,74 @@
 <ion-content>
 
   <div> 
-    <form>
+    <form   (ngSubmit)="CreerRegion()">
         <div class="row">
               <div class="segment">
               <h1>Ajouter une région</h1>
               </div>
          <div class="col-12 col-md-6">
 
-                <label>
-                  <input type="text" placeholder="Code Region"/>
+                <label> 
+                  <input type="text" [(ngModel)]="coderegion" name="coderegion"  placeholder="Code Region"/>
                 </label>
                 <label>
-                  <input type="password" placeholder="Nom de la région"/>
+                  <input type="text"  [(ngModel)]="nom" name="nom" placeholder="Nom de la région"/>
                 </label>
                 <label>
-                  <input type="text" placeholder="Description de la région"/>
+                  <input type="text" [(ngModel)]="description" name="description" placeholder="Description de la région"/>
 
                 </label>
                 <label>
-                  <input type="text" placeholder="Pays"/>
-
+                  <input type="text" [(ngModel)]="langue" name="langue" placeholder="Langue Parlée"/>
                 </label>
-
+                <label>
+                  <input type="text"  [(ngModel)]="Superficie" name="Superficie" placeholder="Domaine D'activité"/>
+                </label>
          </div>
           <div class="col-12 col-md-6">
-            <label>
-              <input type="text" placeholder="Langue Parlée"/>
-            </label>
-            
-            <label>
-              <input type="text" placeholder="Population Actuelle"/>
-            </label>
+              <label>
+                <input type="text"  [(ngModel)]="Chiffre" name="Chiffre" placeholder="Population Actuelle"/>
+              </label>
+              <label>
+                <input type="text"  [(ngModel)]="annee" name="annee" placeholder="Annéé "/>
+              </label>
+
+              <label>
+                <input type="text"  [(ngModel)]="domaineactivite" name="domaineactivite" placeholder="Domaine D'activité"/>
+              </label>
             <label>
               
-              <select name="activites"  class="form-select" id="select" required>
-                <option>Choisisez une activité</option>
-                <option>dfghjkl</option>
-                <option>dfghjkl</option>
+              <select name="nompays" [(ngModel)]="nompays"   class="form-select" id="select" required>
+                <option>Choisisez  Pays</option>
+                <option *ngFor="let p of allpays">{{p.nompays}}</option>
               </select>
 
-              <!-- <option *ngFor="let a of activites">{{a.titre}}</option> -->
             </label>
+            
+          
+            <!-- <label>
+              <ion-list>
+                <ion-item>
+                  <ion-select id="select" placeholder="Selectionner les activités" [multiple]="true" [(ngModel)]="activites"  name="activites">
+                    <ion-select-option *ngFor="let a of activity">{{a.titre}}</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+  
+            </label> -->
             <label>
-              <input type="file" placeholder="Logo.jpg" id="logo" name="file"
+              <input type="file" placeholder="Logo.jpg" [(ngModel)]="img"  id="logo" name="img"
               class="form-control"
             (change)="selectFile($event)" accept="image/png, image/jpeg, image/jpg" required />
             </label>
 
           </div>
 
-       
+       <div>{{messageerror}}</div>
         </div>
       
       
-      <button class="red" type="button"><i class="icon ion-md-lock"></i> Ajouter</button>
+      <button class="red" type="submit"><i class="icon ion-md-lock"></i> Ajouter</button>
       
     </form>
   </div>
